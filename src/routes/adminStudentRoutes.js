@@ -5,6 +5,7 @@ const User = require('../models/user');
 const Enrollment = require('../models/enrollment');
 const adminRouter = express.Router();
 
+// get all students
 adminRouter.get("/all-students", authentication, authorize(["admin"]), async (req, res) => {
     try {
       const students = await User.find({ role: 'student' }).select("name email role");
@@ -14,6 +15,8 @@ adminRouter.get("/all-students", authentication, authorize(["admin"]), async (re
     }
   }
 );
+
+// get a student from id
 adminRouter.get("/student/:id", authentication, authorize(["admin"]), async (req, res) => {
     try {
       const student = await User.findById(req.params.id).select('-password');
@@ -29,6 +32,8 @@ adminRouter.get("/student/:id", authentication, authorize(["admin"]), async (req
     }
   }
 );
+
+// delete a student from id
 adminRouter.delete("/student/:id", authentication, authorize(["admin"]), async (req, res) => {
     try {
       const student = await User.findByIdAndDelete(req.params.id);

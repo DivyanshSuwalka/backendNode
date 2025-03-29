@@ -6,6 +6,7 @@ const Course = require('../models/course');
 
 const studentRouter = express.Router();
 
+// student enroll for a course
 studentRouter.post('/enroll', authentication, authorize(['student']), async (req, res) => {
     try {
       const { courseId } = req.body;
@@ -25,6 +26,8 @@ studentRouter.post('/enroll', authentication, authorize(['student']), async (req
     }
   }
 );
+
+// student unenroll for a course
 studentRouter.post('/unenroll', authentication, authorize(['student']), async (req, res) => {
     try {
       const { courseId } = req.body;
