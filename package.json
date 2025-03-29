@@ -2,11 +2,10 @@
   "name": "backend-assignment",
   "version": "1.0.0",
   "description": "Develop a backend system where authenticated users can manage students and courses, and students can enroll in multiple courses, establishing a many-to-many relationship.",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js"
   },
   "author": "Divyansh Suwalka",
   "license": "ISC",
