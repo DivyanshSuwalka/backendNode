@@ -80,24 +80,24 @@ The API will be available at `http://localhost:5000`.
 
 -   `POST /signup`: Verifies(data sanitization) and registers user data.
 -   `POST /login`: Authenticate (login) a user and get a token.
--   `POST /logout`: logout the user.
+-   `POST /logout`: log out the user.
 
 ### adminRouter (admin only)
 
--   `GET /admin/allstudents` - view all students
--   `GET /admin/student/:id` - view student along with course ID
--   `DELETE /admin/student/:_id` - delete a student using student-id
+-   `GET /admin/allstudents` - view all students.
+-   `GET /admin/student/:id` - view student along with course ID.
+-   `DELETE /admin/student/:_id` - delete a student using student-id.
 
 ### courseRouter (admin only)
--   `GET /courses` - view all courses
--   `POST /course` - creating a course
--   `GET /courses/:id` - view course along with all associated students
--   `DELETE /course/:course-id` - delete a course using the course ID
+-   `GET /courses` - view all courses.
+-   `POST /course` - creating a course.
+-   `GET /courses/:id` - view course along with all associated students.
+-   `DELETE /course/:course-id` - delete a course using the course ID.
 
 ### studentRouter (for students)
 
--   `POST /student/enroll` - enroll for a course
--   `POST /student/unenroll` - unenroll from a course
+-   `POST /student/enroll` - enroll for a course.
+-   `POST /student/unenroll` - unenroll from a course.
 
 ## 📜 License
 
