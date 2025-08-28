@@ -76,40 +76,28 @@ The API will be available at `http://localhost:5000`.
 
 ## 🔌 API Endpoints
 
-The server exposes the following RESTful API endpoints:
+### Auth 
 
-### Auth (`/api/auth`)
+-   `POST /signup`: Verifies(data sanitization) and registers user data.
+-   `POST /login`: Authenticate (login) a user and get a token.
+-   `POST /logout`: logout the user.
 
--   `GET /`: Get authenticated user data.
--   `POST /`: Authenticate (login) a user and get a token.
+### adminRouter (admin only)
 
-### Users (`/api/users`)
+-   `GET /admin/allstudents` - view all students
+-   `GET /admin/student/:id` - view student along with course ID
+-   `DELETE /admin/student/:_id` - delete a student using student-id
 
--   `POST /`: Register a new user.
+### courseRouter (admin only)
+-   `GET /courses` - view all courses
+-   `POST /course` - creating a course
+-   `GET /courses/:id` - view course along with all associated students
+-   `DELETE /course/:course-id` - delete a course using the course ID
 
-### Profiles (`/api/profile`)
+### studentRouter (for students)
 
--   `GET /me`: Get the current user's profile.
--   `POST /`: Create or update the current user's profile.
--   `GET /`: Get all user profiles.
--   `GET /user/:user_id`: Get a specific user's profile by their ID.
--   `DELETE /`: Delete the current user's profile, user account, and posts.
--   `PUT /experience`: Add profile experience.
--   `DELETE /experience/:exp_id`: Delete an experience from a profile.
--   `PUT /education`: Add profile education.
--   `DELETE /education/:edu_id`: Delete education from a profile.
--   `GET /github/:username`: Get user repositories from GitHub.
-
-### Posts (`/api/posts`)
-
--   `POST /`: Create a new post.
--   `GET /`: Get all posts.
--   `GET /:id`: Get a specific post by its ID.
--   `DELETE /:id`: Delete a post by its ID.
--   `PUT /like/:id`: Like a post.
--   `PUT /unlike/:id`: Unlike a post.
--   `POST /comment/:id`: Add a comment to a post.
--   `DELETE /comment/:id/:comment_id`: Delete a comment from a post.
+-   `POST /student/enroll` - enroll for a course
+-   `POST /student/unenroll` - unenroll from a course
 
 ## 📜 License
 
